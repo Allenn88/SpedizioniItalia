@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Welcome, Admin!</h2>
+
+<div class="btn-group" role="group" aria-label="Admin Actions">
+    @Html.ActionLink("Aggiungi Cliente", "AddCliente", "Admin", new { area = "" }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Aggiungi Azienda", "AddAzienda", "Admin", new { area = "" }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Aggiungi Spedizione", "AddSpedizione", "Admin", new { area = "" }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Visualizza Spedizioni", "ViewSpedizioni", "Admin", new { area = "" }, new { @class = "btn btn-primary" })
+</div>

@@ -1,0 +1,27 @@
+﻿@model SpedizioniItalia.Models.Cliente
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    if (TempData["ErrorLogin"] != null)
+    {
+        <div class="alert alert-danger">
+            Le credenziali non sono corrette
+        </div>
+    }
+
+    <div class="mb-3">
+        <label for="loginType" class="form-label">Seleziona il tipo di login:</label>
+        <div class="btn-group" role="group" aria-label="Tipo di Login">
+            @Html.ActionLink("Cliente", "LoginCliente", "Login", new { area = "" }, new { @class = "nav-link" })
+            @Html.ActionLink("Azienda", "LoginAzienda", "Login", new { area = "" }, new { @class = "nav-link" })
+        </div>
+    </div>
+}
